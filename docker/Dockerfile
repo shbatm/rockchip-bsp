@@ -48,8 +48,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
         qemu-user-static \
         sudo \
         swig \
-        udev \
-    && rm -rf /var/lib/apt/lists/*
+        udev
 
 # Set the locale
 RUN locale-gen en_US.UTF-8
