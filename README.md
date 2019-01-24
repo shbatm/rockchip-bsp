@@ -95,6 +95,10 @@ Build a Docker image, called rockchip-radxa:1.
 
 Now the Docker image, rockchip-radxa:1, is ready. You just need to build Docker image once. Everytime you want to build images, just run a Docker container.
 
+#### Ensure Module binfmt_misc is enabled in kernel
+
+    # sudo modprobe binfmt_misc
+
 #### Run a Docker container
 
     $ docker run -it -v /home/jack/rockchip-bsp:/root rockchip /bin/bash
@@ -125,6 +129,18 @@ You will get the kernel image and dtb file
 
     # ls out/kernel/
     Image  rockpi-4b-linux.dtb
+    
+#### Change kernel config(optional)
+
+Optionally, if you want to change the default kernel config
+
+     # cd kernel
+     # export ARCH=arm64
+     # export CROSS_COMPILE=aarch64-linux-gnu-
+     # make rockchip_linux_defconfig
+     # make menuconfig
+     # cd ..
+     # ./build/mk-kernel.sh rockpi4b    #For ROCK Pi 4 Mode B
 
 #### Make rootfs image
 
