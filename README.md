@@ -95,9 +95,10 @@ Build a Docker image, called rockchip-radxa:1.
 
 Now the Docker image, rockchip-radxa:1, is ready. You just need to build Docker image once. Everytime you want to build images, just run a Docker container.
 
-#### Ensure Module binfmt_misc is enabled in kernel
+#### Ensure Module binfmt_misc is enabled
 
     # sudo modprobe binfmt_misc
+    # sudo apt install binfmt-support
 
 #### Run a Docker container
 
